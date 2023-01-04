@@ -68,6 +68,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
+# DerpFest
+    DERP_BUILDTYPE := Official
+    TARGET_FACE_UNLOCK_SUPPORTED := true
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl:64 \
@@ -142,6 +146,7 @@ PRODUCT_COPY_FILES += \
 ifeq ($(TARGET_HAVE_FOD),true)
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/init.udfps.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.udfps.rc
+EXTRA_UDFPS_ANIMATIONS := true
 endif
 
 # Kernel
